@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+		<title>乘法和除法，作者:智翔</title>
+		
+		<style type="text/css">			
+			.title{
+				text-align: center;
+				font-size: 24px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="title">乘法與除法 作者智翔</div>
+		<br>
+		<div class="question">Q1</div>
+		<br>
+		<br>
+		<br>
+		<div class="question">Q2</div>
+		<br>
+		<br>
+		<br>
+		<div class="question">Q3</div>
+		<br>
+		<br>
+		<br>
+		<div class="question">Q4</div>
+		<br>
+		<br>
+		<br>
+		<div class="question">Q5</div>
+		<br>
+		<br>
+		<br>
+		<div class="question">Q6</div>
+		<br>
+		<br>
+		<br>
+		<div class="question">Q7</div>
+		<br>
+		<br>
+		<br>
+		<div class="question">Q8</div>
+		<br>
+		<br>
+		<br>
+		<div class="question">Q9</div>
+		<br>
+		<br>
+		<br>
+		<div class="question">Q10</div>
+		<br>
+		<br>
+		<br>
+				
+	</body>
+	<script type="text/javascript">
+		let drinkAry = ['西瓜汁', '蘋果汁', '巧克力'];
+		
+		let qtAry = document.getElementsByClassName('question');
+		
+		
+		
+		
+		
+		<!-- 處理 q1 -->
+		let q1n1 = getRandomInt(8000)+1000;
+		let q1n2 = getRandomInt(800)+100;
+		qtAry[0].innerHTML = `1瓶${drinkAry[0]}有${q1n1}毫升，我製作了${q1n2}瓶，共是幾毫升?`;
+		console.log('Q1 finish');
+		
+		
+		
+		
+		<!-- 處理 q2 -->
+		let q2n1 = getRandomInt(800)+100;
+		qtAry[1].innerHTML = `正方形邊長是${q2n1}公尺，面積是幾平方公尺?`;
+		console.log('Q2 finish');
+		
+		
+		
+		<!-- 處理 q3 -->
+		let q3n1 = (getRandomInt(40)+10)*1000;
+		let q3n2 = (getRandomInt(30)+10)*10;
+		qtAry[2].innerHTML = `1臺電視特價${q3n1}元，${q3n2}臺要多少錢?`;
+		console.log('Q3 finish');
+		
+		
+		
+		<!-- 處理 q4 -->
+		let q4n1 = getRandomInt(300)+600;
+		let q4n2 = getRandomInt(150)+100;
+		qtAry[3].innerHTML = `${q4n1}顆糖果要分給${q4n2}個小朋友，每個小朋友可以領到幾顆?剩幾顆糖果?`;
+		console.log('Q4 finish');
+		
+		
+		
+		<!-- 處理 q5 -->
+		let q5n1 = getRandomInt(150)+100;
+		let q5n2 = getRandomInt(2000)+1000;
+		qtAry[4].innerHTML = `捷運每節車廂最多可以載${q5n1}人，${q5n2}人至少需要幾節車廂才能全部載完?`;
+		console.log('Q5 finish');
+		
+		
+		
+		<!-- 處理 q6 -->
+		let q6n1 = getRandomInt(8000)+1500;
+		let q6n2 = getRandomInt(300)+100;
+		qtAry[5].innerHTML = `把${q6n1}毫升的果汁，每${q6n2}毫升裝成一杯，可裝滿幾杯?`;
+		console.log('Q6 finish');
+		
+		
+		
+		<!-- 處理 q7 -->
+		let q7n1 = getRandomInt(90)*100;
+		let q7n2 = (getRandomInt(40)+50)*q7n1*10;
+		qtAry[6].innerHTML = `工人每天修築${q7n1}公尺的道路，${q7n2}公尺長的道路要幾天才能修完?`;
+		console.log('Q7 finish');
+		
+		
+		
+		<!-- 處理 q8 -->
+		let q8n1 = (getRandomInt(450)+500)*100;
+		let q8n2 = 500;
+		qtAry[7].innerHTML = `姐姐的存款有${q8n1}元，她把這些存款全部拿到郵局換成${q8n2}元鈔票，最多可以換成幾張?`;
+		console.log('Q8 finish');
+		
+		
+		
+		<!-- 處理 q9 -->
+		let q9n1 = getRandomInt(300)+100;
+		let q9n2 = (getRandomInt(35)+40)*10-q9n1;
+		let q9n3 = getRandomInt(2000)+5000;
+		qtAry[8].innerHTML = `弟弟每個月存${q9n1}元，妹妹每個月存${q9n2}元，兩人各需要存幾個月才能合買一臺${q9n3}元的遊戲機?`;
+		console.log('Q9 finish');
+		
+		
+		
+		<!-- 處理 q10 -->
+		let q10n1 = (getRandomInt(30)+20)*10;
+		let q10n2 = (getRandomInt(5)+4)*10;
+		let q10n3 = (getRandomInt(6)+3)*10;
+		qtAry[9].innerHTML = `弟弟有${q10n1}元，哥哥的錢是弟弟的${q10n2}倍，爸爸的錢又是哥哥的${q10n3}倍，爸爸和哥哥一共有多少錢?`;
+		console.log('Q10 finish');
+		
+		
+		
+		
+		
+		
+		
+		function getRandomInt(max) {
+		  return Math.floor(Math.random() * max);
+		}
+		
+		
+	</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
