@@ -15,93 +15,66 @@
 				font-size: 24px;
 			}
 			
+			.submitBtn{
+				font-size: 26px;
+			}
+			
 		</style>
 	</head>
 	<body>
 		<div class="title">乘法與除法 作者智翔</div>
 		<br>
 		
-		<div class="question">Q1</div>
-		<input class="input" type="text" placeholder="請輸入第1題答案">
-		<br>
-		<br>
-		<br>
+		<div class="questionArea">
+			
+		</div>
 		
-		<div class="question">Q2</div>
-		<input class="input" type="text" placeholder="請輸入第2題答案">
-		<br>
-		<br>
-		<br>
-		
-		<div class="question">Q3</div>
-		<input class="input" type="text" placeholder="請輸入第3題答案">
-		<br>
-		<br>
-		<br>
-		
-		<div class="question">Q4</div>
-		<input class="input" type="text" placeholder="請輸入第4題答案">
-		<br>
-		<br>
-		<br>
-		
-		<div class="question">Q5</div>
-		<input class="input" type="text" placeholder="請輸入第5題答案">
-		<br>
-		<br>
-		<br>
-		
-		<div class="question">Q6</div>
-		<input class="input" type="text" placeholder="請輸入第6題答案">
-		<br>
-		<br>
-		<br>
-		
-		<div class="question">Q7</div>
-		<input class="input" type="text" placeholder="請輸入第7題答案">
-		<br>
-		<br>
-		<br>
-		
-		<div class="question">Q8</div>
-		<input class="input" type="text" placeholder="請輸入第8題答案">
-		<br>
-		<br>
-		<br>
-		
-		<div class="question">Q9</div>
-		<input class="input" type="text" placeholder="請輸入第9題答案">
-		<br>
-		<br>
-		<br>
-		
-		<div class="question">Q10</div>
-		<input class="input" type="text" placeholder="請輸入第10題答案">
-		<br>
-		<br>
-		<br>
-		
-		<input type="button" value="按我繳交答案" onclick="countScore()">
+		<input type="button" class="submitBtn" value="按我繳交答案" onclick="countScore()">
 				
 	</body>
-	<script type="text/javascript">		
+	<script type="text/javascript">
+		let questionArea = document.getElementsByClassName('questionArea');
+		let questioText = "";
+		
+		let createQuestion = () => {
+			for(let i=0; i<10; i++){
+				questioText += '<div class="question"></div>';
+				questioText += '<input class="input" type="text" placeholder="請輸入第'+(i+1)+'題答案">';
+				questioText += '<br><br><br>';
+			}
+			questionArea[0].innerHTML = questioText;
+		}
+		
+		<!-- 產生題目 -->
+		createQuestion();
+		
+		
 		let qtAry = document.getElementsByClassName('question');
 		let input = document.getElementsByClassName('input');
+		
 		let questionOrder = [];
 		let answerAry = [];
 		let score = 0;
+		let wrongText = "";
 		
+		
+		<!-- 計算分數 -->
 		let countScore = () => {
 			for(let i=0; i<10; i++){
 				if(answerAry[i] == input[i].value){
 					score += 10;
 				}
+				else{
+					wrongText += (i+1)+" ";
+				}
 			}
-			alert(`你總共得到${score}分!`);
+			alert(`你總共得到${score}分!\n你答錯了第${wrongText}題`);
 			score = 0;
+			wrongText = "";
 		}
 		
 
+		
 		
 		
 		
