@@ -19,6 +19,12 @@
 				font-size: 26px;
 			}
 			
+			.input{
+				border-style: solid;
+				border-color: black;
+				border-width: 1px;
+			}
+			
 		</style>
 	</head>
 	<body>
@@ -39,7 +45,8 @@
 		let createQuestion = () => {
 			for(let i=0; i<10; i++){
 				questioText += '<div class="question"></div>';
-				questioText += '<input class="input" type="text" placeholder="請輸入第'+(i+1)+'題答案">';
+				questioText += '<input class="input" type="text" placeholder="">';
+				<!-- 請輸入第'+(i+1)+'題答案 -->
 				questioText += '<br><br><br>';
 			}
 			questionArea[0].innerHTML = questioText;
@@ -56,17 +63,28 @@
 		let answerAry = [];
 		let score = 0;
 		let wrongText = "";
+		let playerAnsAry = [];
 		
 		
 		<!-- 計算分數 -->
 		let countScore = () => {
 			for(let i=0; i<10; i++){
+				<!-- 先將答題者的作答儲存起來 -->
+				playerAnsAry[i] = input[i].value;
+				
+				
 				if(answerAry[i] == input[i].value){
 					score += 10;
+					input[i].style.backgroundColor = "#CCFF99";
 				}
 				else{
+					input[i].style.backgroundColor = "#FFCCCC";
 					wrongText += (i+1)+" ";
+					
 				}
+				
+				<!-- input[i].style.borderWidth = "2px"; -->
+				<!-- input[i].style.borderStyle = "solid"; -->
 			}
 			alert(`你總共得到${score}分!\n你答錯了第${wrongText}題`);
 			score = 0;
