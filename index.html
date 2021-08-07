@@ -15,8 +15,9 @@
 				font-size: 24px;
 			}
 			
-			.submitBtn{
-				font-size: 26px;
+			.submitBtn,
+			.restartBtn{
+				font-size: 24px;
 			}
 			
 			.input{
@@ -36,6 +37,9 @@
 		</div>
 		
 		<input type="button" class="submitBtn" value="按我繳交答案" onclick="countScore()">
+		<br>
+		<br>
+		<input type="button" class="restartBtn" value="按我重出題目" onclick="reStart()">
 				
 	</body>
 	<script type="text/javascript">
@@ -62,8 +66,8 @@
 		let questionOrder = [];
 		let answerAry = [];
 		let score = 0;
-		let wrongText = "";
 		let playerAnsAry = [];
+		let sample = 10;  // 題目的類型數量
 		
 		
 		<!-- 計算分數 -->
@@ -74,38 +78,37 @@
 				
 				
 				if(answerAry[i] == input[i].value){
-					score += 10;
+					score += 1;
 					input[i].style.backgroundColor = "#CCFF99";
 				}
 				else{
 					input[i].style.backgroundColor = "#FFCCCC";
-					wrongText += (i+1)+" ";
 					
 				}
-				
-				<!-- input[i].style.borderWidth = "2px"; -->
-				<!-- input[i].style.borderStyle = "solid"; -->
 			}
-			alert(`你總共得到${score}分!\n你答錯了第${wrongText}題`);
+			alert(`你總共答對${score}題! 可以再挑戰一遍喔~`);
 			score = 0;
-			wrongText = "";
 		}
 		
 
 		
+		<!-- 重出題目 -->
+		let reStart = () => {
+			document.location.reload();
+		}
 		
 		
 		
-		<!-- 將題目設為1~10 -->
-		for(let i=0; i<10; i++){
+		<!-- 將題目設為1~sample -->
+		for(let i=0; i<sample; i++){
 			questionOrder[i] = i+1;
 		}
 		
 		
 		<!-- 打亂順序 -->
-		for(let i=0; i<10; i++){
-			let n1 = getRandomInt(10);
-			let n2 = getRandomInt(10);
+		for(let i=0; i<sample; i++){
+			let n1 = getRandomInt(sample);
+			let n2 = getRandomInt(sample);
 			let temp;
 			
 			temp = questionOrder[n1];
